@@ -46,6 +46,12 @@ header{
         font-weight: 300;
     }
 
+    #search_stat{
+        color: white;
+        display: inline-block;
+        margin-right: 20px;
+    }
+
     #keyword{
         padding: 5px;
         border-radius: 20px;
@@ -95,7 +101,7 @@ header{
     flex-direction: column;
     
 
-    #card_heading{
+    #file_name{
         color: white;
         font-size: 1.2rem;
         width: 100%;
@@ -104,7 +110,7 @@ header{
         background-image: linear-gradient(90deg, #F8A2A2, #F66565)
     }
 
-    #card_body{
+    #file_content{
         width: 100%;
         padding: 5px 10px;
         overflow: scroll;
@@ -114,11 +120,37 @@ header{
 }
 
 // books area
-.books_heading{
+.books_section{
     @include bg-white;
     width: 18%;
     text-align: center;
-    padding: 10px
+    padding: 10px;
+
+    .books_labels{
+        text-align: left;
+
+        a{
+            text-decoration: none;
+            color: #505050;
+        }
+        
+    }
+}
+
+// all list items on page
+li{
+    list-style: none;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+}
+
+// underline div styling
+.underline{
+    width: 80%;
+    height: 1px;
+    margin: 0 auto;
+    background-color: #616161;
 }
 
 // details area
@@ -127,25 +159,23 @@ header{
     width: 18%;
     display: flex;
     flex-direction: column;
-    padding: 5px 4px;
+    padding: 5px 10px;
 
     .most_used_head, .least_used_head{
         text-align: center;
     }
 
-    .underline{
-        width: 80%;
-        height: 1px;
-        margin: 0 auto;
-        background-color: #616161;
-    }
-
     .word_frequency_display{
         width: 100%;
-        height: 35%;
+        height: 30%;
+        padding-top: 10px;
     }
 
     .document_stat_head{
         text-align: center;
+    }
+
+    .document_stat_body{
+        padding-top: 10px;
     }
 }

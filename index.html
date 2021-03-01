@@ -13,8 +13,9 @@
   <header>
     <div id="logo">word counter</div>
     <div class="word_search">
+      <span id="search_stat"> </span>
       <input type="text" id="keyword" placeholder="search for..">
-      <button id="search-btn" type="button">Search</button>
+      <button id="search-btn" type="button" onclick="performMark()">Search</button>
     </div>
   </header>
 
@@ -22,15 +23,26 @@
 
     <!-- area where books are loaded -->
     <div class="content_area">
-      <div id="card_heading">Book Title</div>
-      <div id="card_body">select a book from the right</div>
+      <div id="file_name">Book Title</div>
+      <div id="file_content">select a book from the right</div>
     </div>
 
-    <!-- area where books are displayed -->
-    <div class="books_heading">
-      books
+    <!-- area where books labels are displayed -->
+    <div class="books_section">
+      <div>books</div>
+      <div class="underline"></div>
       <div class="books_labels">
-        hello
+        <ul>
+          <li> <a href="#" onclick="loadBook('AliceInWonderland.txt','Alice in Wonderland')">alice in wonderland</a> </li>
+          <li> <a href="#" onclick="loadBook('LOTR.txt', 'Lord of the Rings')">lord of the rings </a> </li>
+          <li> <a href="#" onclick="loadBook('HP1.txt', 'Harry Potter and the Philosopher\'s Stone ')">harry potter 1</a> </li>
+          <li> <a href="#" onclick="loadBook('HP2.txt', 'Harry Potter and the Chamber of Secrets')">harry potter 2</a> </li>
+          <li> <a href="#" onclick="loadBook('Hp3.txt', 'Harry Potter and the Prisoner of Azkaban')">harry potter 3</a> </li>
+          <li> <a href="#" onclick="loadBook('HP4.txt', 'Harry Potter and the Goblet of Fire')">harry potter 4</a> </li>
+          <li> <a href="#" onclick="loadBook('HP5.txt', 'Harry Potter and the Order of the Phoenix')">harry potter 5</a> </li>
+          <li> <a href="#" onclick="loadBook('HP6.txt', 'Harry Potter and the Half-Blood Prince')">harry potter 6</a> </li>
+          <li> <a href="#" onclick="loadBook('HP7.txt', 'Harry Potter and the Deathly Hallows')">harry potter 7</a> </li>
+        </ul>
       </div>
     </div>
 
@@ -58,9 +70,11 @@
       <!-- document stats -->
       <div class="document_stat_head">document stats</div>
       <div class="underline"></div>
-      <div class="document_stat_display">
-        <ul id="document_stats">
-
+      <div class="document_stat_body">
+        <ul>
+          <li id="doc_length"></li>
+          <li id="word_count"></li>
+          <li id="char_count"></li>
         </ul>
       </div>
 
@@ -69,6 +83,12 @@
     </div>
 
   </div>
+
+  <template id="template">
+    <li>
+      {{val}}
+    </li>
+  </template>
 
 
   <script src="./index.js"></script>
