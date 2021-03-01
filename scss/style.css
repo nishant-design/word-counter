@@ -8,6 +8,7 @@
 html {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
+  color: #505050;
 }
 
 body {
@@ -22,12 +23,56 @@ body {
   display: none;
 }
 
-#logo {
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 94%;
+  margin: 0 auto;
+}
+
+header #logo {
   color: white;
   font-size: 3.5rem;
-  padding-left: 1.5rem;
-  padding-top: 0.5rem;
   font-weight: 300;
+}
+
+header #keyword {
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+  margin-right: 20px;
+  -webkit-box-shadow: 0px 1px 3px #505050;
+          box-shadow: 0px 1px 3px #505050;
+}
+
+header #keyword:focus {
+  outline: none;
+}
+
+header #search-btn {
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: #505050;
+  background-color: white;
+  -webkit-box-shadow: 0px 1px 3px #505050;
+          box-shadow: 0px 1px 3px #505050;
+}
+
+header #search-btn:focus {
+  outline: none;
+}
+
+header #search-btn:hover {
+  text-decoration: underline;
 }
 
 #main_container {
@@ -58,33 +103,66 @@ body {
           flex-direction: column;
 }
 
-.content_area .book_heading {
+.content_area #card_heading {
+  color: white;
+  font-size: 1.2rem;
   width: 100%;
-  padding: 18px;
+  padding: 15px;
   border-radius: 10px 10px 0 0;
   background-image: -webkit-gradient(linear, left top, right top, from(#F8A2A2), to(#F66565));
   background-image: linear-gradient(90deg, #F8A2A2, #F66565);
 }
 
-.content_area .reading_area {
+.content_area #card_body {
   width: 100%;
   padding: 5px 10px;
   overflow: scroll;
+  color: #999999;
 }
 
-.books {
+.books_heading {
   background-color: white;
   -webkit-box-shadow: 0px 3px 10px rgba(122, 122, 122, 0.562);
           box-shadow: 0px 3px 10px rgba(122, 122, 122, 0.562);
   border-radius: 10px;
   width: 18%;
+  text-align: center;
+  padding: 10px;
 }
 
-.details {
+.details_about_words {
   background-color: white;
   -webkit-box-shadow: 0px 3px 10px rgba(122, 122, 122, 0.562);
           box-shadow: 0px 3px 10px rgba(122, 122, 122, 0.562);
   border-radius: 10px;
   width: 18%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5px 4px;
+}
+
+.details_about_words .most_used_head, .details_about_words .least_used_head {
+  text-align: center;
+}
+
+.details_about_words .underline {
+  width: 80%;
+  height: 1px;
+  margin: 0 auto;
+  background-color: #616161;
+}
+
+.details_about_words .word_frequency_display {
+  width: 100%;
+  height: 35%;
+}
+
+.details_about_words .document_stat_head {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

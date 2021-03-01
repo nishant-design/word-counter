@@ -18,6 +18,7 @@ $salmon: #F98F8F;
 html{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    color: #505050;
 }
 
 body{
@@ -31,14 +32,50 @@ body{
     display: none;
 }
 
-// logo styling
-#logo{
-    color: white;
-    font-size: 3.5rem;
-    padding-left: 1.5rem;
-    padding-top: 0.5rem;
-    font-weight: 300;
+// header
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 94%;
+    margin: 0 auto;
+
+    #logo{
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 300;
+    }
+
+    #keyword{
+        padding: 5px;
+        border-radius: 20px;
+        border: none;
+        margin-right: 20px;
+        box-shadow: 0px 1px 3px #505050;
+    }
+    #keyword:focus{
+        outline: none;
+    }
+
+    #search-btn{
+        padding: 5px 20px;
+        border-radius: 5px ;
+        border: none;
+        cursor: pointer;
+        color: #505050;
+        background-color: white;
+        box-shadow: 0px 1px 3px #505050;
+    }
+
+    #search-btn:focus{
+       outline: none;
+    }
+    
+    #search-btn:hover{
+        text-decoration: underline;
+    }
 }
+
 
 // main container styling
 #main_container{
@@ -58,29 +95,57 @@ body{
     flex-direction: column;
     
 
-    .book_heading{
+    #card_heading{
+        color: white;
+        font-size: 1.2rem;
         width: 100%;
-        padding: 18px;
+        padding: 15px;
         border-radius: 10px 10px 0 0;
         background-image: linear-gradient(90deg, #F8A2A2, #F66565)
     }
 
-    .reading_area{
+    #card_body{
         width: 100%;
         padding: 5px 10px;
         overflow: scroll;
+        color: #999999;
 
     }
 }
 
 // books area
-.books{
+.books_heading{
     @include bg-white;
     width: 18%;
+    text-align: center;
+    padding: 10px
 }
 
 // details area
-.details{
+.details_about_words{
     @include bg-white;
     width: 18%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 4px;
+
+    .most_used_head, .least_used_head{
+        text-align: center;
+    }
+
+    .underline{
+        width: 80%;
+        height: 1px;
+        margin: 0 auto;
+        background-color: #616161;
+    }
+
+    .word_frequency_display{
+        width: 100%;
+        height: 35%;
+    }
+
+    .document_stat_head{
+        text-align: center;
+    }
 }
