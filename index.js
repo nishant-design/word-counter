@@ -6,6 +6,7 @@ function loadBook(fileName, dispalyName){
     // reset ui
     document.getElementById("file_name").innerHTML = dispalyName;
     document.getElementById("keyword").value = "";
+    document.getElementById("search_stat").innerHTML = "";
 
     // server request to load book
     var xhr = new XMLHttpRequest();
@@ -132,13 +133,18 @@ function performMark(){
     var keyword = document.getElementById("keyword").value;
     var display = document.getElementById("file_content");
 
+    if(keyword == ""){
+        document.getElementById("search_stat").innerHTML = "";
+        return
+    }
+
     var newContent = "";
 
     // find all the currently marked items
     let spans = document.querySelectorAll("mark");
     // <mark></mark>
 
-    for( let i=0; i < spans,length; i++){
+    for( let i=0; i < spans.length; i++){
         spans[i].outerHTML = spans[i].innerText;
     }
 
